@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import BackToTopBar from './components/BackToTopBar.jsx';
+import TopSection from './components/TopSection.jsx';
 
-const Footer = styled.div`
-  display: flex;
-  margin-right: -9.3em;
+const FooterWrapper = styled.div`
+  width: 100%;
 `;
 
 const App = (props) => (
-  <Footer>Hello World</Footer>
+  <FooterWrapper>
+    <BackToTopBar />
+    <TopSection />
+  </FooterWrapper>
 )
 
 ReactDOM.render(<App />, document.getElementById('footer'));
