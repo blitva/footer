@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const LogoBarEl = styled.div`
+const LogoBarEl = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,9 +20,11 @@ const Logo = styled.div`
 `;
 
 const LogoBar = (props) => (
-  <LogoBarEl>
-    <Logo></Logo>
-  </LogoBarEl>
+  <a href='#navbar'>
+    <LogoBarEl>
+      <Logo></Logo>
+    </LogoBarEl>
+  </a>
 );
 
 export default LogoBar;

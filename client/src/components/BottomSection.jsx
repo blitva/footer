@@ -25,11 +25,6 @@ const TextWrapper = styled.div`
   &:hover {
     cursor: pointer;
   }
-  &:first-child {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 `;
 
 const Text = styled.p`
@@ -43,6 +38,9 @@ const HeaderText = styled(Text)`
   width: auto;
   font-weight: 600;
   font-size: 11px;
+  ${TextWrapper}:hover & {
+    text-decoration: underline;
+  }
 `;
 
 const RegText = styled(Text)`
@@ -50,6 +48,9 @@ const RegText = styled(Text)`
   font-size: 10px;
   width: 88%;
   margin-bottom: 3em;
+  ${TextWrapper}:hover & {
+    text-decoration: underline;
+  }
 `;
 
 
@@ -94,16 +95,32 @@ const generateColumns = (numOfCols) => {
   return result;
 };
 
-const generatedColumns = generateColumns(6);
+const numberOfItemsPerColumn = 6;
+const generatedColumns = generateColumns(numberOfItemsPerColumn);
 
+const EndOfPage = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 3em;
+`;
 
-
+const EndOfPageText = styled.div`
+  font-family: "Amazon Ember",Arial,sans-serif;
+  font-size: 12px;
+  color: #999999;
+`;
 
 const BottomSection = (props) => (
   <BottomSectionWrapper>
     <ColumnWrapper>
       {generatedColumns}
     </ColumnWrapper>
+    <EndOfPage>
+      <EndOfPageText>
+        FEC-Blitva Amazon's mock-up created by Barsha Shrestha, Amos Nash, Justin Rozal and Alek Ortiz
+      </EndOfPageText>
+    </EndOfPage>
   </BottomSectionWrapper>
 );
 

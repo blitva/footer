@@ -25,7 +25,7 @@ const TopSectionInnerCol = styled.div`
 
 const Text = styled.p`
   font-family: "Amazon Ember",Arial,sans-serif;
-  color: white;
+  color: #FFFFFF;
 `;
 
 const HeaderText = styled(Text)`
