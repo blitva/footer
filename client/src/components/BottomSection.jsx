@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
+import Chance from 'chance';
+const chance = new Chance();
 
 const BottomSectionWrapper = styled.div`
   width: 100%;
@@ -10,7 +13,7 @@ const BottomSectionWrapper = styled.div`
 const ColumnWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 1% 0 1%;
+  margin: 0 10% 0 10%;
   padding: 3% 0 3% 0;
 `;
 
@@ -50,163 +53,56 @@ const RegText = styled(Text)`
 `;
 
 
+const InfoItem = (props) => (
+  <TextWrapper>
+    <HeaderText>
+      { chance.sentence({ words: Math.floor(Math.random() * (3 - 1) + 1) }).slice(0, -1) }
+    </HeaderText>
+    <RegText>
+      { chance.sentence({ words: Math.floor(Math.random() * (5 - 3) + 3) }).slice(0, -1) }
+    </RegText>
+  </TextWrapper>
+);
+
+const generateItemsForCol = (numOfItems) => {
+
+  let result = [];
+
+  for (let i = 0; i < numOfItems; i++) {
+    result.push(<InfoItem key={uuidv4()} />);
+  };
+
+  return result;
+};
+
+const generatedItemsForCol = generateItemsForCol(6);
+
+const ItemsCol = (props) => (
+  <BottomSectionCol>
+    {generatedItemsForCol}
+  </BottomSectionCol>
+);
+
+const generateColumns = (numOfCols) => {
+
+  let result = [];
+
+  for (let i = 0; i < numOfCols; i++) {
+    result.push(<ItemsCol key={uuidv4()} />);
+  };
+
+  return result;
+};
+
+const generatedColumns = generateColumns(6);
+
+
+
 
 const BottomSection = (props) => (
   <BottomSectionWrapper>
     <ColumnWrapper>
-      <BottomSectionCol>
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-      </BottomSectionCol>
-
-      <BottomSectionCol>
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-      </BottomSectionCol>
-
-      <BottomSectionCol>
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-      </BottomSectionCol>
-
-      <BottomSectionCol>
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-      </BottomSectionCol>
-
-      <BottomSectionCol>
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-      </BottomSectionCol>
-
-      <BottomSectionCol>
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-      </BottomSectionCol>
-
-      <BottomSectionCol>
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-
-        <TextWrapper>
-          <HeaderText>Let Us Help You</HeaderText>
-            <RegText>Amazon and COVID-19</RegText>
-        </TextWrapper>
-      </BottomSectionCol>
+      {generatedColumns}
     </ColumnWrapper>
   </BottomSectionWrapper>
 );
