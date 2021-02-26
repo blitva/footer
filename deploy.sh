@@ -4,7 +4,7 @@
 npm run build
 
 # Remove old gzipped bundle
-rm /Users/alekortiz/Documents/Hack Reactor/Immersive/Week17-2/rpt25-front-end-capstone/FEC-footer/public/footer_bundle.js.gz
+rm /Users/alekortiz/Documents/Hack\ Reactor/Immersive/Week17-2/rpt25-front-end-capstone/FEC-footer/public/footer_bundle.js.gz
 
 # Gzip new bundle
 gzip /Users/alekortiz/Documents/Hack\ Reactor/Immersive/Week17-2/rpt25-front-end-capstone/FEC-footer/public/footer_bundle.js

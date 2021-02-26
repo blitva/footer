@@ -19,10 +19,14 @@ const BackToTopLink = styled.a`
   text-decoration: none;
 `;
 
+const scrollToTop = () => {
+  let originalUrl = window.location;
+  document.getElementById('navbar').scrollIntoView(true);
+  window.replace(originalUrl);
+};
+
 const BackToTopBar = (props) => (
-  <BackToTopLink href='#navbar'>
-    <BackToTopWrapper>Back to top</BackToTopWrapper>
-  </BackToTopLink>
+  <BackToTopWrapper onClick={() => scrollToTop()}>Back to top</BackToTopWrapper>
 );
 
 export default BackToTopBar;
