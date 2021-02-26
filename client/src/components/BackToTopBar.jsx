@@ -15,8 +15,14 @@ const BackToTopWrapper = styled.div`
   }
 `;
 
+const BackToTopLink = styled.a`
+  text-decoration: none;
+`;
+
 const BackToTopBar = (props) => (
-  <BackToTopWrapper>Back to top</BackToTopWrapper>
+  <BackToTopLink href='#navbar'>
+    <BackToTopWrapper>Back to top</BackToTopWrapper>
+  </BackToTopLink>
 );
 
 export default BackToTopBar;

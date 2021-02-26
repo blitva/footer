@@ -20,11 +20,9 @@ const Logo = styled.div`
 `;
 
 const LogoBar = (props) => (
-  <a href='#navbar'>
-    <LogoBarEl>
-      <Logo></Logo>
-    </LogoBarEl>
-  </a>
+  <LogoBarEl>
+    <Logo></Logo>
+  </LogoBarEl>
 );
 
 export default LogoBar;
